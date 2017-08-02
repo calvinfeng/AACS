@@ -9,3 +9,5 @@ and data structures eventually.
 * [Blocks & Proc](./blocks_and_procs)
 * [Recursion](./recursion)
 * [Tree](./tree)
+* [Path Finding Algorithms](./path_finder)
+* [Backtracking](./backtracking)
