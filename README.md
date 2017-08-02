@@ -6,5 +6,6 @@ and data structures eventually.
 
 ## Table of Content
 
-* [Blocks & Procs](./blocks_and_procs)
-* 
+* [Blocks & Proc](./blocks_and_procs)
+* [Recursion](./recursion)
+* [Tree](./tree)
