@@ -8,4 +8,4 @@
 
 #### The Function Call Tree
 
-![make change](/diagrams/makeChange.png)
+![](./diagrams/makeChange.png)
