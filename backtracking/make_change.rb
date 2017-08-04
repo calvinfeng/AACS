@@ -8,18 +8,42 @@ def greedy_make_change(value, coins)
     [coins.first] * num_coin + greedy_make_change(remaining_value, coins.drop(1))
 end
 
-greedy_make_change(24, [10, 7, 1])
+p greedy_make_change(24, [10, 7, 1])
 
-def make_change(value, coins)
+def recursive_make_change(value, coins)
     return [] if value == 0 || coins.empty?
-    results = []
+    changes = []
     coins.each_index do |i|
         next if coins[i] > value
         remaining_value = value - coins[i]
-        result = [coins[i]] + make_change(remaining_value, coins.drop(i))
-        results << result
+        coin_change = [coins[i]] + recursive_make_change(remaining_value, coins.drop(i))
+        changes << coin_change
     end
-    results.min_by { |result| result.length }
+    changes.min_by { |change| change.length }
 end
 
-p make_change(24, [10, 7, 1])
+p recursive_make_change(24, [10, 7, 1])
+
+
+def iterative_make_change(value, coins)
+    return [] if value == 0 || coins.empty?
+    changes = []
+    stack = [[value, coins, []]]
+    until stack.empty?
+        value, coins, current_change = stack.pop
+        if value == 0
+            changes << current_change
+        else
+            coins.each_index do |i|
+                next if coins[i] > value
+                remaining_value = value - coins[i]
+                updated_change = current_change.dup
+                updated_change << coins[i]
+                stack << [remaining_value, coins.drop(i), updated_change]
+            end
+        end
+    end
+    changes.min_by { |change| change.length }
+end
+
+p iterative_make_change(24, [10, 7, 1])
