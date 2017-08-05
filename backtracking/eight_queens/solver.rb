@@ -15,6 +15,6 @@ def seek_solution(board)
     false
 end
 
-my_board = Board.new(4)
+my_board = Board.new(8)
 solution = seek_solution(my_board)
 puts solution

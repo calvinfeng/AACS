@@ -6,7 +6,7 @@ and data structures eventually.
 
 ## Table of Content
 
-* [Blocks & Proc](./blocks_and_procs)
+* [Blocks & Proc](./block_and_proc)
 * [Recursion](./recursion)
 * [Tree](./tree)
 * [Path Finding Algorithms](./path_finder)
